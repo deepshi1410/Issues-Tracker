@@ -14,15 +14,15 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
-
-<body>
+<!-- This makes sure that the JavaScript function fetchIssues() is called each time the application loads. -->
+<body onload="getIssues()">
   <header>
     <h1 class="center">JS Issues Tracker</h1>
   </header>
   <main>
     <div class="container">
       <div class="jumbotron">
-        <form action="">
+        <form action="" is="issueTrackerForm">
           <h3>Add a new Issue</h3>
           <div class="form-group">
             <label for="desc">Description</label>
@@ -40,7 +40,7 @@
             <label for="assignee">Assignee</label>
             <input type="text" id="assignee" class="form-control" placeholder="Enter assignee" />
           </div>
-          <button class="btn btn-primary">Add</button>
+          <button type="submit" onclick="saveIssues()" class="btn btn-primary">Add</button>
         </form>
       </div>
       <div class="row">
